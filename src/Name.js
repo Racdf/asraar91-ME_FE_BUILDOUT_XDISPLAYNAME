@@ -11,26 +11,30 @@ export default function Name() {
     }
   };
   return (
+    <div>
     <form onSubmit={handleSubmit}>
       <h1>Full Name Display</h1>
-      <span>First Name: </span>
+      <label htmlFor="first-name">First Name: </label>
       <input
+        id="first-name"
         type="text"
         value={firstName}
         onChange={(e) => setFirstName(e.target.value)}
         required
       /><br />
-      <span>Last Name: </span>
+      <label htmlFor="last-name">Last Name: </label>
       <input
+        id="last-name"
         type="text"
         value={lastName}
         onChange={(e) => setLastName(e.target.value)}
         required
       /><br />
       <button type="submit">Submit</button>
-      {fullName && (
-        <p>Full Name: {fullName}</p>
-      )}
     </form>
+    {fullName && (
+     <p>Full Name: {fullName}</p>
+    )}
+  </div>
   );
 }
